@@ -1,47 +1,47 @@
-App.PizzaController = Ember.ObjectController.extend({
+App.ArticleController = Ember.ObjectController.extend({
     actions: {
-        addToCart: function() {
+        addToSaved: function() {
             var self = this;
-            self.store.find('Cart').then(function(cartItems) {
-                cartItems = cartItems || [];
-                var pizza = self.get('model');
-                var cartItem = {};
+            self.store.find('Saved').then(function(savedItems) {
+                savedItems = savedItems || [];
+                var article = self.get('model');
+                var savedItem = {};
 
-                cartItem.id = cartItems.get('length');
-                cartItem.pizza = {
-                    id: pizza.get('id'),
-                    name: pizza.get('name'),
-                    image: pizza.get('image'),
-                    description: pizza.get('description')
+                savedItem.id = savedItems.get('length');
+                savedItem.article = {
+                    id: article.get('id'),
+                    name: article.get('name'),
+                    image: article.get('image'),
+                    description: article.get('description')
                 };
 
-                self.store.createRecord('Cart', cartItem);
-                self.transitionToRoute('cart');
+                self.store.createRecord('Saved', savedItem);
+                self.transitionToRoute('saved');
 
             });
         }
     }
 });
 
-App.CartController = Ember.ObjectController.extend({
+App.SavedController = Ember.ObjectController.extend({
     actions: {
         checkout: function() {
-            // we get the list of all the pizzaz in 
-            // the current cart and add it as a record 
+            // we get the list of all the subjects in 
+            // the current saved and add it as a record 
             // to OrderHistory
             var self = this;
 
-            self.store.find('Cart').then(function(cartItems) {
+            self.store.find('Saved').then(function(savedItems) {
                 var order = [];
-                cartItems.forEach(function(cartItem) {
-                    var pizza = cartItem.get('pizza');
+                savedItems.forEach(function(savedItem) {
+                    var article = savedItem.get('article');
                     order.push({
-                        id: cartItem.get('id'),
-                        pizza: {
-                            id: pizza.id,
-                            name: pizza.name,
-                            image: pizza.image,
-                            description: pizza.description
+                        id: savedItem.get('id'),
+                        article: {
+                            id: article.id,
+                            name: article.name,
+                            image: article.image,
+                            description: article.description
                         }
                     });
                 });
@@ -56,8 +56,8 @@ App.CartController = Ember.ObjectController.extend({
                     self.store.createRecord('History', historyItem);
                     self.transitionToRoute('history');
 
-                    // Remove all Items from current cart
-                    self.store.unloadAll('Cart');
+                    // Remove all Items from current saved
+                    self.store.unloadAll('Saved');
 
                 });
             });

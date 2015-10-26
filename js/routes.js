@@ -2,28 +2,28 @@ App.IndexRoute = Ember.Route.extend({
     start: 4,
     end: 8,
     model: function() {
-        return this.store.find('Pizza', {
+        return this.store.find('Article', {
             start: this.get('start'),
             end: this.get('end')
         });
     }
 });
 
-App.PizzazRoute = Ember.Route.extend({
+App.SubjectsRoute = Ember.Route.extend({
     model: function() {
-        return this.store.find('Pizza');
+        return this.store.find('Article');
     }
 });
 
-App.PizzaRoute = Ember.Route.extend({
+App.ArticleRoute = Ember.Route.extend({
     model: function(params) {
-        return this.store.find('Pizza', params.pizza_id);
+        return this.store.find('Article', params.article_id);
     }
 });
 
-App.CartRoute = Ember.Route.extend({
+App.SavedRoute = Ember.Route.extend({
     model: function() {
-        return this.store.find('Cart');
+        return this.store.find('Saved');
     }
 });
 

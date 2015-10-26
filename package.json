@@ -1,0 +1,26 @@
+{
+  "name": "ember-proto",
+  "version": "1.0.0",
+  "description": "prototype for pre-print services",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanessadyce/ember-proto2.git"
+  },
+  "author": "vanessadyce",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanessadyce/ember-proto2/issues"
+  },
+  "homepage": "https://github.com/vanessadyce/ember-proto2#readme"
+}

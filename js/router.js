@@ -1,12 +1,12 @@
 App.Router.map(function() {
     // put your routes here
-    this.route('pizzaz');
+    this.route('subjects');
 
-    this.route('pizza', {
-        path: '/pizza/:pizza_id'
+    this.route('article', {
+        path: '/article/:article_id'
     });
 
-    this.route('cart');
+    this.route('saved');
 
     this.route('history', function() {
         this.route('details', {

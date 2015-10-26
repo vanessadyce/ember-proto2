@@ -1,4 +1,4 @@
-var pizzaz = [{
+var topics = [{
     'id': 0,
     'name': 'Psychology',
     'image': 'imgs/psych.jpg',
