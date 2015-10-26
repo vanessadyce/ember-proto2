@@ -1,7 +1,7 @@
-starter-kit
+ember-proto
 ===========
 
-A starter kit for Ember
+A prototype for Ember
 
 Your Ember.js project is almost ready! Here's how to get started:
 
@@ -30,7 +30,3 @@ For more information about ember-testing package see [ember-testing](http://embe
 
 For more information about the QUnit testing framework, see [QUnit](http://qunitjs.com/).
 
-Contact
-====
-
-[www.emberjs.com](http://www.emberjs.com)
